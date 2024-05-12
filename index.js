@@ -1,5 +1,4 @@
-import {apiKey} from './apikey'
-import {searchEngineId} from './apikey'
+import {apiKey, searchEngineId} from './apikey.js'
 
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
