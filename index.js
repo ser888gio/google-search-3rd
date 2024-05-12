@@ -1,7 +1,8 @@
 import {apiKey} from './apikey'
 import {searchEngineId} from './apikey'
 
-
+const apiKey = {apiKey};
+const searchEngineId = {searchEngineId};
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
