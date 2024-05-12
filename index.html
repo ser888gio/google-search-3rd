@@ -20,40 +20,13 @@
     <form id="search-form">
       <input type="text" id="search-input" placeholder="Search..." size = 45>
       <button type="submit" class = "button-search">Search</button>
-      <button class = "button-downlaod">Download</button>
+      <button id= "button-downlaod">Download</button>
     </form>
   </div>
 
   <div id="search-results"></div>
 
-  <script>
-    const apiKey = 'AIzaSyBJ6nxs8xXs9GlftJyVGrfaW4O9SGppvNw ';
-    const searchEngineId = 'b6019a74f4ac248ff';
-    const searchForm = document.getElementById('search-form');
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-
-    searchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const searchTerm = searchInput.value.trim();
-        if (searchTerm) {
-            fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${searchTerm}`)
-                    .then(response => response.json())
-                    .then(data => {
-                      const resultsHtml = data.items.map(result => {
-                        return `
-                                <div class="result">
-                                    <h2><a href="${result.link}">${result.title}</a></h2>
-                                    <p>${result.snippet}</p>
-                                </div>
-                            `;
-                      }).join('');
-                      searchResults.innerHTML = resultsHtml;
-                    })
-                    .catch(error => console.error(error));
-        }
-    });
-  </script>
+  <script src = index.js></script>
   <footer>©2024 autor Sergiu Nica pro splnění domacího úkolu do Inizia</footer>
 </body>
 </html>
