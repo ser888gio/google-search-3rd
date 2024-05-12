@@ -26,16 +26,7 @@ searchForm.addEventListener('submit', (e) => {
 });
 
 
-const buttonDownload = document.getElementById('button-downlaod');
 
-buttonDownload.addEventListener('click', (e) => {
-    const textContent = searchResults.innerHTML.replace(/<[^>]*>/g, '');
-    const data = { results: textContent };
-    const jsonData = JSON.stringify(data);
-    const blob = new Blob([jsonData], {type: 'application/json'});
-    const downloadLink = document.createElement('a');
-    downloadLink.href = URL.createObjectURL(blob);
-    downloadLink.download = 'results';
-    downloadLink.click();
-});
+
+
 
