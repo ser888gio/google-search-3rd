@@ -1,6 +1,7 @@
+import {apiKey} from './apikey'
+import {searchEngineId} from './apikey'
 
-const apiKey = 'AIzaSyBJ6nxs8xXs9GlftJyVGrfaW4O9SGppvNw ';
-const searchEngineId = 'b6019a74f4ac248ff';
+
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
