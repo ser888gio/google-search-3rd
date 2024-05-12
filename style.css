@@ -1,0 +1,22 @@
+.neGoogle, .searching-container{
+    display: flex;
+    justify-content: center;
+}
+
+.neGoogle{
+    font-size: 100px;
+}
+
+input{
+    height: 150%;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
