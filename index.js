@@ -4,6 +4,7 @@ const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
 
+
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchTerm = searchInput.value.trim();
@@ -24,6 +25,8 @@ searchForm.addEventListener('submit', (e) => {
             .catch(error => console.error(error));
     }
 });
+
+
 
 
 
