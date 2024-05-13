@@ -26,6 +26,41 @@ searchForm.addEventListener('submit', (e) => {
     }
 });
 
+const downloadButton = document.getElementById('button-downlaod');
+downloadButton.addEventListener('click', () => {
+    const formattedData = document.getElementById('search-results').innerHTML;;
+    const downloadParsed = parseArticleInfo(formattedData)
+    const blob = new Blob([downloadParsed], { type: 'text/plain' }); // Set content type to HTML
+    const url = window.URL.createObjectURL(blob);
+    const downloadLink = document.createElement('a');
+    downloadLink.href = url;
+    downloadLink.download = 'search_results.txt'; // Set download filename
+
+    downloadLink.click(); // Simulate a click to trigger download
+    window.URL.revokeObjectURL(url); // Revoke temporary URL (clean up)
+
+});
+
+function parseArticleInfo(htmlString) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+
+    const results = Array.from(doc.querySelectorAll('.result'))
+        .map(result => {
+            const titleElement = result.querySelector('h2 a');
+            const title = titleElement ? titleElement.textContent.trim() : ''; // Extract title
+
+            const linkElement = titleElement; // Assuming link is within the title anchor
+            const link = linkElement ? linkElement.href : ''; // Extract link
+
+            const snippetElement = result.querySelector('p');
+            const snippet = snippetElement ? snippetElement.textContent.trim() : '';
+
+            return `Article - Title: ${title}\nLink: ${link}\nSnippet: ${snippet}\n\n`;
+        });
+
+    return results.join('');
+}
 
 
 
