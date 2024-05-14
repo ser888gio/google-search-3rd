@@ -34,7 +34,7 @@ downloadButton.addEventListener('click', () => {
     const url = window.URL.createObjectURL(blob);
     const downloadLink = document.createElement('a');
     downloadLink.href = url;
-    downloadLink.download = 'search_results.txt';
+    downloadLink.download = 'results.txt';
 
     downloadLink.click();
     window.URL.revokeObjectURL(url);
