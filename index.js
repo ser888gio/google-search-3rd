@@ -28,7 +28,7 @@ searchForm.addEventListener('submit', (e) => {
 
 const downloadButton = document.getElementById('button-downlaod');
 downloadButton.addEventListener('click', () => {
-    const formattedData = document.getElementById('search-results').innerHTML;;
+    const formattedData = document.getElementById('search-results').innerHTML;
     const downloadParsed = parseArticleInfo(formattedData)
     const blob = new Blob([downloadParsed], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
@@ -48,10 +48,10 @@ function parseArticleInfo(htmlString) {
     const results = Array.from(doc.querySelectorAll('.result'))
         .map(result => {
             const titleElement = result.querySelector('h2 a');
-            const title = titleElement ? titleElement.textContent.trim() : ''; // Extract title
+            const title = titleElement ? titleElement.textContent.trim() : '';
 
-            const linkElement = titleElement; // Assuming link is within the title anchor
-            const link = linkElement ? linkElement.href : ''; // Extract link
+            const linkElement = titleElement;
+            const link = linkElement ? linkElement.href : '';
 
             const snippetElement = result.querySelector('p');
             const snippet = snippetElement ? snippetElement.textContent.trim() : '';
