@@ -30,14 +30,14 @@ const downloadButton = document.getElementById('button-downlaod');
 downloadButton.addEventListener('click', () => {
     const formattedData = document.getElementById('search-results').innerHTML;;
     const downloadParsed = parseArticleInfo(formattedData)
-    const blob = new Blob([downloadParsed], { type: 'text/plain' }); // Set content type to HTML
+    const blob = new Blob([downloadParsed], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
     const downloadLink = document.createElement('a');
     downloadLink.href = url;
-    downloadLink.download = 'search_results.txt'; // Set download filename
+    downloadLink.download = 'search_results.txt';
 
-    downloadLink.click(); // Simulate a click to trigger download
-    window.URL.revokeObjectURL(url); // Revoke temporary URL (clean up)
+    downloadLink.click();
+    window.URL.revokeObjectURL(url);
 
 });
 
