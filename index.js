@@ -6,7 +6,7 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchTerm = searchInput.value.trim();
     if (searchTerm) {
-        fetch(`http://localhost:63342/goole-search/`)
+        fetch(`API ENDPOINT URL/`)
             .then(response => response.json())
             .then(data => {
                 const resultsHtml = data.items.map(result => {

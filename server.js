@@ -1,13 +1,13 @@
 const express = require('express')
 const app = express();
 
-app.listen(63342, ()=>{
-    console.log('Server is listening on port 63342')
+app.listen('PORT NUMBER', ()=>{
+    console.log('Server is listening on port PORT NUMBER')
 })
 
 app.get('/api', (request, response) =>{
-    const apiKey = 'AIzaSyBJ6nxs8xXs9GlftJyVGrfaW4O9SGppvNw';
-    const searchEngineId = 'b6019a74f4ac248ff';
+    const apiKey = 'INSERT API KEY';
+    const searchEngineId = 'INSERT SEARCH ENIGNE ID';
     const searchTerm = request.query.q
 
     fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${searchTerm}`)
