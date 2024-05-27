@@ -31,6 +31,8 @@ Notes
 
     This readme assumes a basic understanding of HTML, JavaScript, and the DOM API.
     You'll need to obtain an API key and search engine ID from the search engine you want to use (e.g., Google Custom Search).
+    The server-side implementation (server.js) is included but commented out. It's a basic example of how you could potentially fetch data from a server and provide it to the client-side application. The core functionality works without a server.
+    
 Demo
 Here is how it looks:
 ![Screenshot 2024-05-27 130111](https://github.com/ser888gio/google-search-3rd/assets/104572860/69aa944e-9381-4ced-8bf9-1f6f1543ca2e)
@@ -41,6 +43,6 @@ You can also save results to a .txt file. You can see the results in the file on
 
 
 
-    The server-side implementation (server.js) is included but commented out. It's a basic example of how you could potentially fetch data from a server and provide it to the client-side application. The core functionality works without a server.
+
 
 
